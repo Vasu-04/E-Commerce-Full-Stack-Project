@@ -3,13 +3,13 @@ import "./NavBar.css"
 import axios from 'axios'
 import 'remixicon/fonts/remixicon.css'
 import { useState, useEffect } from 'react'
-const NavBar = ({ userId }) => {
+const NavBar = ({ userId, onSearchClick }) => {
     const [letter, setletter] = useState("")
     useEffect(() => {
         const getInitial = async () => {
             try {
                 const res = await axios.get(`http://localhost:3000/Home/${userId}`)
-                console.log("Response:", res.data);
+                
                 setletter(res.data.initial.toUpperCase());
             } catch (err) {
                 console.error("Error fetching user initial:", err);
@@ -27,13 +27,18 @@ const NavBar = ({ userId }) => {
             </div>
             <div className="right">
                 <div className='navItems'>
-                    <i className="ri-search-line"></i>
+                    <i className="ri-search-line" onClick={onSearchClick}></i>
                 </div>
                 <div className='navItems'>
                     <i className="ri-shopping-cart-line"></i>
                 </div>
                 <div className='navItemsInitial'>
                     {letter}
+                    <div className='logOutDiv'>
+                        <button>Create Profile</button>
+                        <button>Appearance</button>
+                        <button>Logout</button>
+                    </div>
                 </div>
             </div>
 

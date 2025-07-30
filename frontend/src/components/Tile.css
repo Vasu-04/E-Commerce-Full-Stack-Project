@@ -1,0 +1,91 @@
+.tileDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tileDivImage {
+    border-radius: 10px;
+    /* height: 300px; */
+    width: 300px;
+    background-color: white;
+    /* margin-bottom: 20px; */
+}
+
+.tileDivContent {
+    border-radius: 10px;
+    background-color: rgba(237, 201, 180, 0.651);
+    padding: 5px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tileDivContent h3 {
+    font-weight: 600;
+    font-size: 800;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    text-overflow: ellipsis;
+}
+
+img {
+    max-width: 100%;
+}
+.ratingPriceDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ratingPriceDiv h3{
+    margin: 0;
+    padding: 0;
+    font-size: 800;
+    font-weight: 600;
+}
+.ratingBar{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    
+}
+.ratingBar p{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.buttonBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    gap: 10px;
+}
+.buyButton{
+    /* border: none; */
+    background-color: black;
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 50%;
+    box-shadow: none;
+    border: 1px solid black;
+    outline: none;
+    color: white;
+    font-weight: 600;
+}
+.cartButton{
+    font-weight: 600;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 50%;
+    box-shadow: none;
+    border: 1px solid black;
+    outline: none;
+}

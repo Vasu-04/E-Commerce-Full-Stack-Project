@@ -1,0 +1,32 @@
+.searchBarDiv{
+    border: 1px solid #575757;
+    padding: 5px 6px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    border-radius: 50px;
+    color: #575757;
+    /* height: 100%; */
+}
+.searchBarDiv input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+.searchBarDiv button{
+    background-color: #1D1D1D;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+}

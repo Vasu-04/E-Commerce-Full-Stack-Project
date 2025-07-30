@@ -1,0 +1,10 @@
+.displayDataDiv{
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding-top: 7px;
+    background-color: transparent;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-evenly;
+}

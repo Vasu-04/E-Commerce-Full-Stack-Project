@@ -25,6 +25,7 @@
     flex-direction: column;
     height: 100%;
     position: relative;
+    /* background-color: yellow; */
 }
 
 .scrollableWindow {
@@ -34,7 +35,8 @@
     display: flex;
     justify-content: end;
     align-items: end;
-    padding-top: 180px;
+    transition: padding-top 1s ease;
+    /* padding-top: 180px; */
 }
 
 .divWithBgTransparent {
@@ -42,13 +44,68 @@
     font-weight: bolder;
     font-family: 'Montserrat', sans-serif;
     color: white;
-
-
-
 }
 
 .actualContentDiv {
-    background-color: white;
+    overflow: hidden;
+    background-color: transparent;
     position: absolute;
     top: 70%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    /* height: 100%; */
+    width: 100%;
+    /* padding: 0px 10px; */
+}
+
+.leftCategoryDiv {
+    margin-top: 7px;
+    font-family: 'Montserrat', sans-serif;
+    width: 15%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+
+.categoryHeading {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.leftCategoryDiv h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.rightContentDiv {
+    flex-wrap: wrap;
+    position: relative;
+    width: calc(100% - 15% - 30px);
+    background-color: transparent;
+    height: 100%;
+    /* margin-right: 10px; */
+}
+
+.actualContent1 {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    display: flex;
+    gap: 10px;
+}
+.searchBar{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+.searchBar h2{
+    margin: 0;
+    padding: 0;
 }
