@@ -1,6 +1,5 @@
 const express = require("express")
 const userModel = require("../models/user.model")
-const { route } = require("../app")
 const router = express.Router()
 router.post("/AddUser", async (req, res) => {
     const email = req.body.FormData.email

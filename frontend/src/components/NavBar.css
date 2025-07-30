@@ -1,0 +1,64 @@
+.navBarDiv{
+    background-color: white;
+    height: 40px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: fixed;
+    z-index: 1000;
+    width: calc(100% - 80px);
+    font-size: 25px;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.left {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    /* background-color: green; */
+    height: 100%;
+}
+.left i{
+    display: flex;
+    align-items: center;
+    /* background-color: pink; */
+}
+.left h1{
+    font-size: 25px;
+    font-weight: 600;
+}
+.right{
+    display: flex;
+    font-size: 20px;
+    gap: 10px;
+}
+.navItems{
+    font-size: 15px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inital{
+    background-color: blue;
+}
+.navItemsInitial{
+    background: linear-gradient(to top right, rgb(137, 133, 165), rgba(255, 255, 255, 0.642));
+    font-size: 15px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    height: 25px;
+    color: white;
+    /* font-weight: bold; */
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

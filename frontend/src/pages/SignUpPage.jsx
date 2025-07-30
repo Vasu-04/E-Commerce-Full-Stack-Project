@@ -21,35 +21,57 @@ const SignUpPage = () => {
   const onRePasswordChange = (e) => {
     setRePassword(e.target.value)
   }
+  const DataValidation = () => {
+
+  }
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    await axios.post("http://localhost:3000/SignUp/AddUser", { FormData })
-      .then((res) => {
-        if (res.data.out === true) {
-          setFormCriteriaError(res.data.message)
+
+
+    if ((FormData.email).includes("@")) {
+      const password = FormData.password
+      if (password.length >= 8 && /[a-z]/.test(password) && /[A-Z]/.test(password) && /\d/.test(password) && /[!@#$%^&*]/.test(password)) {
+        if ((FormData.password) == RePassword) {
+          await axios.post("http://localhost:3000/SignUp/AddUser", { FormData })
+            .then((res) => {
+              if (res.data.out === true) {
+                setFormCriteriaError(res.data.message)
+              }
+              else {
+                Navigate("/SignInPage")
+              }
+              console.log(res, "FROM SIGNUPPAGE.JSX LINE 34")
+            })
+            .catch((err) => {
+              console.log(err, "IN SIGNUPPAGE.JSX LINE 37")
+            })
         }
         else {
-          Navigate("/SignInPage")
+          setFormCriteriaError("Passwords doesn't match ")
         }
-        console.log(res, "FROM SIGNUPPAGE.JSX LINE 34")
-      })
-      .catch((err) => {
-        console.log(err, "IN SIGNUPPAGE.JSX LINE 37");
-      })
+      }
+      else {
+        setFormCriteriaError("Password doesn't meet specified criteria")
+      }
+    }
+    else {
+      setFormCriteriaError("Please Enter valid email")
+    }
+
   }
   return (
     <div>
       <div>{FormCriteriaError}</div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="Name">Name </label>
-        <input placeholder='Enter Name' onChange={onNameChange}></input><br />
+        <input placeholder='Enter Name' onChange={onNameChange} required></input><br />
         <label htmlFor="Email">Email</label>
-        <input placeholder='Enter Email' onChange={onEmailChange}></input><br />
+        <input placeholder='Enter Email' onChange={onEmailChange} required></input><br />
         <label htmlFor="Password">Password</label>
-        <input placeholder='Enter Password' onChange={onPasswordChange}></input><br />
+        <input placeholder='Enter Password' onChange={onPasswordChange} required></input><br />
         <label htmlFor="RePassword">Re-Enter Password</label>
-        <input placeholder='Re-Enter Password' onChange={onRePasswordChange}></input><br />
+        <input placeholder='Re-Enter Password' onChange={onRePasswordChange} required></input><br />
         <input type='submit' value={"Sign Up"}></input>
       </form>
       <p>Already Registered ?<button onClick={() => Navigate("/SignInPage")}>Sign In</button></p>
