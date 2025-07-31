@@ -3,8 +3,8 @@ const userModel = require("../models/user.model")
 const router = express.Router()
 router.post("/ValidateUser", async (req, res) => {
     const { email, password } = req.body.FormData
-    console.log(email)
-    console.log(password)
+    console.log("email : ",email)
+    console.log("password:",password)
     const Users = await userModel.find()
     for (let index = 0; index < Users.length; index++) {
         const element = Users[index];

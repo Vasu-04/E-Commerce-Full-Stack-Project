@@ -16,8 +16,10 @@ const SignInPage = () => {
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
+        console.log("FormData at line 19 signInPage.jsx", FormData)
         await axios.post("https://e-commerce-full-stack-project-backend.onrender.com/SignIn/ValidateUser", { FormData })
             .then((res) => {
+                console.log("res at line 22 signInPage.jsx", res)
                 if (res.data.out) {
                     const userId = res.data.userId
                     Navigate("/HomePage", { state: {userId} })
