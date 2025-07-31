@@ -20,7 +20,7 @@ const HomePage = () => {
     // console.log("this is user id", userId)
     const listOfImage = [
         "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage.jpg?updatedAt=1753955653022",
-        "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage2.png?updatedAt=1753955653280"
+        "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage2.png?updatedAt=1753955653280",
         "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage3.jpg?updatedAt=1753955653264",
         "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage4.jpg?updatedAt=1753955653139",
         "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage5.jpg?updatedAt=1753955653344"
