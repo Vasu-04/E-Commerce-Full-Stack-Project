@@ -33,7 +33,7 @@ const SignUpPage = () => {
       const password = FormData.password
       if (password.length >= 8 && /[a-z]/.test(password) && /[A-Z]/.test(password) && /\d/.test(password) && /[!@#$%^&*]/.test(password)) {
         if ((FormData.password) == RePassword) {
-          await axios.post("http://localhost:3000/SignUp/AddUser", { FormData })
+          await axios.post("https://e-commerce-full-stack-project-backend.onrender.com/SignUp/AddUser", { FormData })
             .then((res) => {
               if (res.data.out === true) {
                 setFormCriteriaError(res.data.message)

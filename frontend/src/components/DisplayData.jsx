@@ -7,7 +7,7 @@ const DisplayData = ({categoryFilter}) => {
     // const [category,setcategory] = useState("")
     const [products, setproducts] = useState([])
     const getData = async ()=>{
-        await axios.get("http://localhost:3000/Getdata")
+        await axios.get("https://e-commerce-full-stack-project-backend.onrender.com/Getdata")
         .then((res)=>{
             setproducts(res.data.products)
             console.log(res,"in line 10 displaydata.jsx")
@@ -18,7 +18,7 @@ const DisplayData = ({categoryFilter}) => {
     }
     const getAllCategoryData = async ()=>{
         console.log("displaydataline20",categoryFilter)
-        await axios.post("http://localhost:3000/Getdata/AllCategoryData",{categoryFilter:categoryFilter})
+        await axios.post("https://e-commerce-full-stack-project-backend.onrender.com/Getdata/AllCategoryData",{categoryFilter:categoryFilter})
         .then((res)=>{
             setproducts(res.data.products)
             console.log(res,"in line 23 displaydata.jsx")

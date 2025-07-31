@@ -8,7 +8,7 @@ const NavBar = ({ userId, onSearchClick }) => {
     useEffect(() => {
         const getInitial = async () => {
             try {
-                const res = await axios.get(`http://localhost:3000/Home/${userId}`)
+                const res = await axios.get(`https://e-commerce-full-stack-project-backend.onrender.com/Home/${userId}`)
                 
                 setletter(res.data.initial.toUpperCase());
             } catch (err) {

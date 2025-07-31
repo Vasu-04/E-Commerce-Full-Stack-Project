@@ -16,7 +16,7 @@ const SignInPage = () => {
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await axios.post("http://localhost:3000/SignIn/ValidateUser", { FormData })
+        await axios.post("https://e-commerce-full-stack-project-backend.onrender.com/SignIn/ValidateUser", { FormData })
             .then((res) => {
                 if (res.data.out) {
                     const userId = res.data.userId
@@ -28,7 +28,7 @@ const SignInPage = () => {
             })
     }
     const onGoogleSignInClick = async ()=>{
-        await axios.get("http://localhost:3000/GoogleAuth/auth/google")
+        await axios.get("https://e-commerce-full-stack-project-backend.onrender.com/GoogleAuth/auth/google")
         .then((res)=>{
             console.log("User Logged In Succesfully : RES",res)
             Navigate("/HomePage")
