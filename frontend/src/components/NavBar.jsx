@@ -3,7 +3,9 @@ import "./NavBar.css"
 import axios from 'axios'
 import 'remixicon/fonts/remixicon.css'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 const NavBar = ({ userId, onSearchClick }) => {
+    const Navigate = useNavigate();
     const [letter, setletter] = useState("")
     useEffect(() => {
         const getInitial = async () => {
@@ -21,7 +23,7 @@ const NavBar = ({ userId, onSearchClick }) => {
 
     return (
         <div className='navBarDiv'>
-            <div className="left">
+            <div className="left" onClick={()=>Navigate("/")}>
                 <i className="ri-bubble-chart-fill"></i>
                 <h1>Stuffsus</h1>
             </div>
