@@ -3,11 +3,6 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
 import "./HomePage.css"
 import NavBar from '../components/NavBar'
-import HomePageBg from '../assets/HomePageBgImage.jpg'
-import HomePageBg2 from '../assets/HomePageBgImage2.png'
-import HomePageBg3 from '../assets/HomePageBgImage3.jpg'
-import HomePageBg4 from '../assets/HomePageBgImage4.jpg'
-import HomePageBg5 from '../assets/HomePageBgImage5.jpg'
 import ProductSidebarAllproduct from '../components/ProductSidebarAllproduct';
 import ProductSidebarNewarrival from '../components/ProductSidebarNewarrival';
 import SearchBar from '../components/SearchBar';
@@ -24,11 +19,11 @@ const HomePage = () => {
     const userId = location?.state.userId;
     // console.log("this is user id", userId)
     const listOfImage = [
-        HomePageBg,
-        HomePageBg2,
-        HomePageBg3,
-        HomePageBg4,
-        HomePageBg5
+        "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage.jpg?updatedAt=1753955653022",
+        "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage2.png?updatedAt=1753955653280"
+        "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage3.jpg?updatedAt=1753955653264",
+        "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage4.jpg?updatedAt=1753955653139",
+        "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage5.jpg?updatedAt=1753955653344"
     ]
     const [BgImage, setBgImage] = useState(listOfImage[0])
 

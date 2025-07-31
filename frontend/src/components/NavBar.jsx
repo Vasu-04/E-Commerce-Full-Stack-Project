@@ -23,7 +23,7 @@ const NavBar = ({ userId, onSearchClick }) => {
 
     return (
         <div className='navBarDiv'>
-            <div className="left" onClick={()=>Navigate("/")}>
+            <div className="left" onClick={()=>Navigate("/HomePage")}>
                 <i className="ri-bubble-chart-fill"></i>
                 <h1>Stuffsus</h1>
             </div>
