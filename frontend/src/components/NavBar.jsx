@@ -6,12 +6,15 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 const NavBar = ({ userId, onSearchClick }) => {
     const Navigate = useNavigate();
+    const onLogoClick = () => {
+        Navigate("/HomePage")
+    }
     const [letter, setletter] = useState("")
     useEffect(() => {
         const getInitial = async () => {
             try {
                 const res = await axios.get(`https://e-commerce-full-stack-project-backend.onrender.com/Home/${userId}`)
-                
+
                 setletter(res.data.initial.toUpperCase());
             } catch (err) {
                 console.error("Error fetching user initial:", err);
@@ -23,7 +26,7 @@ const NavBar = ({ userId, onSearchClick }) => {
 
     return (
         <div className='navBarDiv'>
-            <div className="left" onClick={Navigate("/HomePage")}>
+            <div className="left" onClick={onLogoClick}>
                 <i className="ri-bubble-chart-fill"></i>
                 <h1>Stuffsus</h1>
             </div>
