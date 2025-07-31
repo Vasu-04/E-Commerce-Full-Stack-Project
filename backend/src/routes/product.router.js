@@ -20,9 +20,9 @@ router.post("/add", upload.single("image"), async (req, res) => {
     // SDK initialization
 
     const imagekit = new ImageKit({
-        publicKey : "public_S+ST09/gOs0FkUTh+N2x5r9nFCM=",
-        privateKey : "private_JUWmGKwe4JamYPR0/iuLeyP3KEo=",
-        urlEndpoint : "https://ik.imagekit.io/dv0jyi1v0"
+        publicKey : process.env.PUBLIC_KEY,
+        privateKey : process.env.PRIVATE_KEY,
+        urlEndpoint : process.env.URLENDPOINT
     })
     const result = await imagekit.upload({
         file : req.file.buffer,

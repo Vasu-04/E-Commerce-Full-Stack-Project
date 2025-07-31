@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: center;
     max-width: fit-content;
-    /* background-color: green; */
+    background-color: transparent;
     height: 100%;
 }
 .left i{

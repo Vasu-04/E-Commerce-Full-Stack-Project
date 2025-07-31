@@ -18,7 +18,7 @@ const DisplayData = ({categoryFilter}) => {
     }
     const getAllCategoryData = async ()=>{
         console.log("displaydataline20",categoryFilter)
-        await axios.get("http://localhost:3000/Getdata/AllCategoryData",{categoryFilter:categoryFilter})
+        await axios.post("http://localhost:3000/Getdata/AllCategoryData",{categoryFilter:categoryFilter})
         .then((res)=>{
             setproducts(res.data.products)
             console.log(res,"in line 23 displaydata.jsx")

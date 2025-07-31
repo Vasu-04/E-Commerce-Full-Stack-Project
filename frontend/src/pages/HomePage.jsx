@@ -15,7 +15,12 @@ import DisplayData from '../components/DisplayData';
 const HomePage = () => {
     const [scrollableWindowPaddingTop, setscrollableWindowPaddingTop] = useState("180px")
     const location = useLocation();
+
     const [categoryFilter, setcategoryFilter] = useState("")
+    const onCategoryClick = (cat)=>{
+        console.log(cat)
+        setcategoryFilter(cat)
+    }
     const userId = location?.state.userId;
     // console.log("this is user id", userId)
     const listOfImage = [
@@ -54,7 +59,7 @@ const HomePage = () => {
                             <div className='actualContent1' >
                                 <div className="leftCategoryDiv">
                                     <div className='categoryHeading'><h3>Category</h3></div>
-                                    <ProductSidebarAllproduct onCategoryClick={(cat)=>{setcategoryFilter(cat)}}/>
+                                    <ProductSidebarAllproduct onCategoryClick = {onCategoryClick}/>
                                     <ProductSidebarNewarrival />
                                 </div>
                                 <div className="rightContentDiv">
