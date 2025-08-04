@@ -10,11 +10,23 @@ import DisplayData from '../components/DisplayData';
 const HomePage = () => {
     const [scrollableWindowPaddingTop, setscrollableWindowPaddingTop] = useState("180px")
     const location = useLocation();
-
+    const [searchFilter, setsearchFilter] = useState("")
     const [categoryFilter, setcategoryFilter] = useState("")
-    const onCategoryClick = (cat)=>{
+    const [hoveredTileIndex, setHoveredTileIndex] = useState(null);
+
+    const handleTileHover = (index) => {
+        setHoveredTileIndex(index);
+    };
+
+    const handleTileLeave = () => {
+        setHoveredTileIndex(null);
+    };
+    const onCategoryClick = (cat) => {
         console.log(cat)
         setcategoryFilter(cat)
+    }
+    const onSearchClick = (sentence) => {
+        setsearchFilter(sentence)
     }
     const userId = location?.state.userId;
     // console.log("this is user id", userId)
@@ -40,8 +52,8 @@ const HomePage = () => {
     return (
         <div className='bgImage' style={{ backgroundImage: `url(${BgImage})` }}>
             <div className='mainContent'>
-                <NavBar userId={userId} onSearchClick={() => setscrollableWindowPaddingTop("0px")}/>
-                <div className='scrollableWindow' style={{paddingTop : scrollableWindowPaddingTop}}>
+                <NavBar userId={userId} onSearchClick={() => setscrollableWindowPaddingTop("0px")} />
+                <div className='scrollableWindow' style={{ paddingTop: scrollableWindowPaddingTop }}>
                     <div className='bottomDiv'>
                         <div className='divWithBgTransparent'>
                             SHOP
@@ -49,16 +61,16 @@ const HomePage = () => {
                         <div className='actualContentDiv'>
                             <div className='searchBar'>
                                 <h2>Give All You Need</h2>
-                                <SearchBar/>
+                                <SearchBar onSearchClick={onSearchClick} />
                             </div>
                             <div className='actualContent1' >
                                 <div className="leftCategoryDiv">
                                     <div className='categoryHeading'><h3>Category</h3></div>
-                                    <ProductSidebarAllproduct onCategoryClick = {onCategoryClick}/>
+                                    <ProductSidebarAllproduct onCategoryClick={onCategoryClick} />
                                     <ProductSidebarNewarrival />
                                 </div>
                                 <div className="rightContentDiv">
-                                    <DisplayData categoryFilter={categoryFilter}/>
+                                    <DisplayData categoryFilter={categoryFilter} searchFilter={searchFilter} hoveredTileIndex={hoveredTileIndex} onTileHover={handleTileHover} onTileLeave={handleTileLeave} />
                                 </div>
                             </div>
                             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -68,6 +80,13 @@ const HomePage = () => {
                 </div>
                 {/* <h1 >hello</h1> */}
             </div>
+            {/* {
+                isBlur && (
+                    <div className='blurDiv'>
+
+                    </div>
+                )
+            } */}
         </div>
     )
 }

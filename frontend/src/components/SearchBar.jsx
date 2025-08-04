@@ -1,11 +1,17 @@
 import React from 'react'
+import { useState } from 'react'
 import "./SearchBar.css"
-const SearchBar = () => {
+const SearchBar = ({onSearchClick}) => {
+  const [inputValue, setinputValue] = useState("")
+  const onSearchInputClick = (sentence)=>{
+    onSearchClick(inputValue)
+    setinputValue("")
+  }
   return (
     <div className='searchBarDiv'>
       <i className="ri-search-line"></i>
-      <input placeholder='Search on Stuffsus'></input>
-      <button>Search</button>
+      <input value={inputValue} placeholder='Search on Stuffsus' onChange={(e)=>{setinputValue(e.target.value)}}></input>
+      <button onClick={()=>{onSearchInputClick()}}>Search</button>
     </div>
   )
 }

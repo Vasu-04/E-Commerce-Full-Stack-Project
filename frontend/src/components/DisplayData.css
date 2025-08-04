@@ -8,3 +8,49 @@
     gap: 30px;
     justify-content: space-evenly;
 }
+
+.displayDataContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pagination {
+    padding: 5px 10px;
+    border-radius: 6px;
+    padding-right: 10px;
+  display: flex;
+  gap: 6px;
+  width: 100%;
+  /* margin: 20px 10px 0px 10px; */
+  margin-top: 20px;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  background-color: rgba(237, 201, 180, 0.651);
+}
+
+.pagination button {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+
+.pagination button.active {
+  background-color: black;
+  color: white;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pages{
+    /* background-color: ; */
+    gap: 10px;
+    display: flex;
+}

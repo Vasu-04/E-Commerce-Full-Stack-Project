@@ -11,6 +11,7 @@ const productRouter = require("./routes/product.router")
 const productDetailRouter = require("./routes/productDetail.router")
 const indexRouter = require("./routes/index.router")
 const path = require("path")
+app.use(cors())
 app.use(cors(
     {
         origin: "https://e-commerce-full-stack-project-frontend.onrender.com",

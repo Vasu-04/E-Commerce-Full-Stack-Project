@@ -27,7 +27,7 @@ const NavBar = ({ userId, onSearchClick }) => {
     return (
         <div className='navBarDiv'>
             <div className="left" onClick={onLogoClick}>
-                <i className="ri-bubble-chart-fill"></i>
+                <i class="ri-centos-fill"></i>
                 <h1>Stuffsus</h1>
             </div>
             <div className="right">

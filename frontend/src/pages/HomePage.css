@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    
 }
 
 .mainContent {
@@ -85,8 +86,10 @@
     flex-wrap: wrap;
     position: relative;
     width: calc(100% - 15% - 30px);
-    background-color: transparent;
+    /* background-color: pink; */
     height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
     /* margin-right: 10px; */
 }
 
@@ -108,4 +111,17 @@
 .searchBar h2{
     margin: 0;
     padding: 0;
+}
+
+.blurDiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1000; /* blur below the tileDiv */
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    transition: all 0.3s ease;
 }

@@ -32,7 +32,11 @@
 
 .product-dropdown {
     margin: 5px 0px;
+    overflow: hidden;
     padding-left: 20px;
+    max-height: 0;
+  opacity: 0;
+  transition: max-height 4s ease, opacity 0.3s ease;
 }
 
 .menu-item {
@@ -53,4 +57,17 @@
 .menu-item:hover {
     background-color: #F2F2F2;
     color: black;
+}
+
+.arrow-icon {
+  transition: transform 0.5s ease;
+}
+
+.arrow-icon.rotate {
+  transform: rotate(90deg);
+}
+
+.product-dropdown.open {
+  max-height: 500px; /* depends on how tall your menu is */
+  opacity: 1;
 }
