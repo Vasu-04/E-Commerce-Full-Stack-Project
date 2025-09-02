@@ -45,6 +45,7 @@
     font-weight: bolder;
     font-family: 'Montserrat', sans-serif;
     color: white;
+    pointer-events: none;
 }
 
 .actualContentDiv {

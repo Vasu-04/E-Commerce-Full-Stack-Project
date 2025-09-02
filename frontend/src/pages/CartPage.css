@@ -1,0 +1,120 @@
+/* .cartMainPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+h1{
+    margin: 0;
+    padding: 0;
+}
+
+.cartCard:hover{
+    min-width: none;
+} */
+
+
+/* .cartMainPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.cartCardsWrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cartCard {
+  height: 100%;
+  border: 1px solid black;
+  transition: all 0.5s ease;
+  cursor: pointer;
+} */
+
+
+.cartMainPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full screen */
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+
+.cartCardsWrapper {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* padding: 20px; */
+  /* height: calc(100vh - 70px); adjust depending on NavBar height */
+  align-items: center;
+  position: relative;
+  scrollbar-width: none; /* Firefox */
+}
+
+.cartCardsWrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.cartCard {
+  min-width: 33vw;
+  height: 100%;
+  /* border-radius: 12px; */
+  /* border: 2px solid #000; */
+  transition: transform 0.3s ease;
+  position: relative;
+  flex-shrink: 0;
+  background-color: pink;
+
+  box-shadow: -15px -15px 50px rgb(0, 0, 0);
+}
+
+.cartScrollablePile {
+  display: flex;
+  overflow-x: auto;
+  /* padding-left: 8vw; */
+  gap: 0; /* Remove gap between cards */
+  scroll-behavior: smooth;
+  height: fit-content;
+  background-color: yellow;
+  height: 100%;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.cartCard {
+  flex-shrink: 0;
+  width: 33vw;
+  margin-left: -8vw; /* Overlap effect */
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* First card should not be overlapped */
+.cartCard:first-child {
+  margin-left: 0;
+}
+
+/* Optional: Hover effect to lift the card */
+.cartCard:hover {
+  transform: scale(1.02);
+  z-index: 10;
+  background-size: contain;
+  width: 50vw;
+}
+
+/* Optional: Hide scrollbar */
+.cartScrollablePile::-webkit-scrollbar {
+  display: none;
+}

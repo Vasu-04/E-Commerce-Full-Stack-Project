@@ -34,7 +34,7 @@ const HomePage = () => {
         "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage.jpg?updatedAt=1753955653022",
         "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage2.png?updatedAt=1753955653280",
         "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage3.jpg?updatedAt=1753955653264",
-        "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage4.jpg?updatedAt=1753955653139",
+        "https://ik.imagekit.io/dv0jyi1v0/homepageimage4_3shvOtK1b?updatedAt=1754326360540",
         "https://ik.imagekit.io/dv0jyi1v0/HomePageBgImage5.jpg?updatedAt=1753955653344"
     ]
     const [BgImage, setBgImage] = useState(listOfImage[0])
@@ -52,7 +52,7 @@ const HomePage = () => {
     return (
         <div className='bgImage' style={{ backgroundImage: `url(${BgImage})` }}>
             <div className='mainContent'>
-                <NavBar userId={userId} onSearchClick={() => setscrollableWindowPaddingTop("0px")} />
+                <NavBar userId={userId} onSearchClick={() => setscrollableWindowPaddingTop("0px")} pageHeading={"home"}/>
                 <div className='scrollableWindow' style={{ paddingTop: scrollableWindowPaddingTop }}>
                     <div className='bottomDiv'>
                         <div className='divWithBgTransparent'>
@@ -73,20 +73,13 @@ const HomePage = () => {
                                     <DisplayData categoryFilter={categoryFilter} searchFilter={searchFilter} hoveredTileIndex={hoveredTileIndex} onTileHover={handleTileHover} onTileLeave={handleTileLeave} />
                                 </div>
                             </div>
-                            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                            
                         </div>
                     </div>
 
                 </div>
-                {/* <h1 >hello</h1> */}
             </div>
-            {/* {
-                isBlur && (
-                    <div className='blurDiv'>
-
-                    </div>
-                )
-            } */}
+          
         </div>
     )
 }

@@ -112,4 +112,5 @@ img {
     box-shadow: none;
     border: 1px solid black;
     outline: none;
+    cursor: pointer;
 }

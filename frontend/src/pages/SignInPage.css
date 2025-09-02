@@ -1,4 +1,4 @@
-.signup-bg {
+.signin-bg {
   min-height: 100vh;
   background: linear-gradient(120deg, #fffbe6 60%, #ffe0b2 100%);
   display: flex;
@@ -7,7 +7,7 @@
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-.signup-main-container {
+.signin-main-container {
   display: flex;
   background: rgba(255, 255, 255, 0.98);
   border-radius: 18px;
@@ -18,7 +18,7 @@
   min-height: 540px;
 }
 
-.signup-banner {
+.signin-banner {
   background: linear-gradient(120deg, #ff9800 60%, #ffcc80 100%);
   color: #fff;
   flex: 1.2;
@@ -32,8 +32,8 @@
   animation: fadeInLeft 1s;
 }
 
-.signup-illustration {
-  font-size: 100px;
+.signin-illustration {
+  width: 180px;
   margin-bottom: 1.5rem;
   animation: float 2.5s infinite ease-in-out;
   color: #fffde7;
@@ -44,7 +44,7 @@
   50% { transform: translateY(-12px);}
 }
 
-.signup-banner h2 {
+.signin-banner h2 {
   font-size: 2rem;
   margin-bottom: 0.7rem;
   font-weight: 700;
@@ -52,13 +52,13 @@
   color: #fffde7;
 }
 
-.signup-banner p {
+.signin-banner p {
   font-size: 1.1rem;
   opacity: 0.95;
   color: #fffde7;
 }
 
-.signup-card {
+.signin-card {
   flex: 1.5;
   padding: 2.5rem 2.5rem 2rem 2.5rem;
   display: flex;
@@ -79,19 +79,20 @@
   to { opacity: 1; transform: translateX(0);}
 }
 
-.signup-logo {
+.signin-logo {
   display: flex;
   justify-content: center;
   margin-bottom: 0.6rem;
 }
-.signup-logo .ri-centos-fill {
-  font-size: 60px;
-  color: #a0522d;
+.signin-logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(255, 152, 0, 0.08);
 }
 
-.signup-title {
+.signin-title {
   text-align: center;
   margin-bottom: 0.7rem;
   color: #a0522d;
@@ -100,7 +101,7 @@
   letter-spacing: 0.5px;
 }
 
-.signup-error {
+.signin-error {
   color: #fff;
   background: #e65100;
   padding: 0.5rem 1rem;
@@ -119,18 +120,18 @@
   100% { transform: translateX(0);}
 }
 
-.signup-form-group {
+.signin-form-group {
   margin-bottom: 0.7rem;
 }
 
-.signup-label {
+.signin-label {
   display: block;
   margin-bottom: 0.3rem;
   color: #a0522d;
   font-weight: 500;
 }
 
-.signup-input {
+.signin-input {
   width: 93%;
   padding: 0.55rem 0.9rem;
   border-radius: 7px;
@@ -140,13 +141,13 @@
   background: #fffde7;
   color: #a0522d;
 }
-.signup-input:focus {
+.signin-input:focus {
   border: 1.5px solid #ff9800;
   outline: none;
   background: #fff;
 }
 
-.signup-submit {
+.signin-submit {
   width: 100%;
   padding: 0.8rem;
   background: linear-gradient(90deg, #ff9800 60%, #ffe082 100%);
@@ -160,20 +161,55 @@
   box-shadow: 0 2px 8px rgba(255, 152, 0, 0.08);
   transition: background 0.2s, transform 0.1s;
 }
-.signup-submit:hover {
+.signin-submit:hover {
   background: linear-gradient(90deg, #ffe082 60%, #ff9800 100%);
   color: #a0522d;
   transform: translateY(-2px) scale(1.03);
 }
 
-.signup-footer {
+.signin-or {
+  text-align: center;
+  margin: 1.2rem 0 0.7rem 0;
+  color: #a0522d;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.signin-google-btn {
+  width: 100%;
+  padding: 0.7rem;
+  background: #fffde7;
+  color: #a0522d;
+  border: 1.5px solid #ff9800;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.signin-google-btn:hover {
+  background: #ffe0b2;
+  color: #ff9800;
+  border: 1.5px solid #a0522d;
+}
+.google-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.signin-footer {
   margin-top: 1.2rem;
   text-align: center;
   font-size: 1rem;
   color: #a0522d;
 }
 
-.signup-signin-btn {
+.signin-signup-btn {
   background: none;
   border: none;
   color: #ff9800;
@@ -184,23 +220,23 @@
   margin-left: 2px;
   transition: color 0.2s;
 }
-.signup-signin-btn:hover {
+.signin-signup-btn:hover {
   color: #a0522d;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .signup-main-container {
+  .signin-main-container {
     flex-direction: column;
     min-width: 320px;
     max-width: 95vw;
   }
-  .signup-banner, .signup-card {
+  .signin-banner, .signin-card {
     border-radius: 18px 18px 0 0;
     min-width: unset;
     padding: 2rem 1.2rem;
   }
-  .signup-card {
+  .signin-card {
     border-radius: 0 0 18px 18px;
   }
 }

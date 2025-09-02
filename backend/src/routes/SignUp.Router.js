@@ -21,7 +21,8 @@ router.post("/AddUser", async (req, res) => {
         const User = userModel({
             name: req.body.FormData.name,
             email: req.body.FormData.email,
-            password: req.body.FormData.password
+            password: req.body.FormData.password,
+            theme: "light"
         })
         await User.save()
     }

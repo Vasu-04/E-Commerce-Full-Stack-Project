@@ -1,10 +1,45 @@
 import React from 'react'
 import "./Tile.css"
-
-
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Tile = ({ element, index, onTileHover, onTileLeave, hoveredTileIndex }) => {
     const isHovered = hoveredTileIndex === index;
+    const [cartText, setcartText] = useState("Add to Cart")
+    const productId = element._id
+    // const Navigate = useNavigate()
+    // const navigateToCartPage = () => {
+    //     Navigate("/cartPage",{ state: {userId} })
+    // }
+    const onAddCartClick = async () => {
+        setcartText("Added to Cart")
+        await axios.post(`https://e-commerce-full-stack-project-backend.onrender.com/Home/addToCart/${productId}`)
+            .then((res) => {
+                console.log(res, "from line 11 tile.jsx")
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+    const getCartTextFromData = async () => {
+    try {
+        const res = await axios.get(`https://e-commerce-full-stack-project-backend.onrender.com/Cart/getCartProductById/${productId}`);
+        if (res.data.cartContainsProduct === true) {
+            setcartText("Added to Cart");
+        } else {
+            setcartText("Add to Cart");
+        }
+    } catch (err) {
+        console.log(err);
+        setcartText("Add to Cart"); // fallback
+    }
+};
+
+    useEffect(() => {
+    if (productId) getCartTextFromData();
+}, [productId]);
+
 
     return (
         <div
@@ -34,7 +69,7 @@ const Tile = ({ element, index, onTileHover, onTileLeave, hoveredTileIndex }) =>
                     <h3>${element.price}</h3>
                 </div>
                 <div className="buttonBar">
-                    <button className='cartButton'>Add to Cart</button>
+                    <button className='cartButton' onClick={() => { onAddCartClick() }} style={cartText == "Added to Cart" ? { pointerEvents: "none" } : {}}>{cartText}</button>
                     <button className='buyButton'>Buy Now</button>
                 </div>
             </div>

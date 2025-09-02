@@ -8,10 +8,11 @@ const SignUpRouter = require("./routes/SignUp.Router")
 const SignInRouter = require("./routes/SignIn.Router")
 const GetdataRouter = require("./routes/Getdata.Router")
 const productRouter = require("./routes/product.router")
+const cartRouter = require("./routes/Cart.Router")
 const productDetailRouter = require("./routes/productDetail.router")
 const indexRouter = require("./routes/index.router")
 const path = require("path")
-app.use(cors())
+// app.use(cors())
 app.use(cors(
     {
         origin: "https://e-commerce-full-stack-project-frontend.onrender.com",
@@ -34,4 +35,5 @@ app.use("/SignUp", SignUpRouter)
 app.use("/SignIn", SignInRouter)
 app.use("/Home",HomeRouter)
 app.use("/Getdata",GetdataRouter)
+app.use("/Cart",cartRouter)
 module.exports = app
